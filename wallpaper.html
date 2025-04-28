@@ -1,232 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PinoyGulay - 30 Days of Filipino Vegetable Recipes</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinoyGulay - 30 Days of Filipino Vegetable Recipes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="og:title" content="PinoyGulay - Authentic Filipino Vegetable Recipes">
+    <meta property="og:description" content="Discover 30 days of healthy and delicious Filipino vegetable recipes.">
+    <meta property="og:image" content="images/pinoygulay-cover.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f1e8;
+            color: #5d4b35;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #d9c7a0;
+            color: #5d4b35;
+            padding: 10px 0;
+            z-index: 1001;
+            position: relative;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+            vertical-align: middle;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        .wallpaper-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: #f8f4eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(93, 75, 53, 0.1);
+            padding: 30px;
+        }
+        .wallpaper-image {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 30px;
+        }
+        .wallpaper-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .wallpaper-meta {
+            color: #8a7053;
+            margin-bottom: 20px;
+        }
+        .wallpaper-desc {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 10px;
+        }
+        .download-btn {
+            background-color: #8a7053;
+            color: white;
+        }
+        .share-btn {
+            background-color: #e8e0cf;
+        }
+        .back-btn {
+            background-color: #a4bb86;
+            color: white;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #d9c7a0;
+            color: #5d4b35;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(93, 75, 53, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #f8f4eb;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #8a7053;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .password-form {
+            margin-top: 20px;
+        }
+        .password-input-group {
+            margin-bottom: 15px;
+        }
+        .password-input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .password-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d9c7a0;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .password-submit-btn {
+            background-color: #8a7053;
+            color: #f8f4eb;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .password-error {
+            color: #d9534f;
+            margin-top: 10px;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .wallpaper-image {
+                max-height: 50vh;
+            }
+            .action-btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+             footer {
+        background-color: #d9c7a0;
+        color: #5d4b35;
+        padding: 50px 0 20px;
+        border-top: 1px solid #c4b58b;
     }
-    body {
-      background: #f5f1e8;
-      color: #5d4b35;
-    }
-    header {
-      background: #d9c7a0;
-      padding: 10px 0;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-    }
-    nav ul li a {
-      color: inherit;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .logo img {
-      height: 40px;
-    }
-    main {
-      padding: 40px 0;
-    }
-    .wallpaper-container {
-      background: #f8f4eb;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(93,75,53,0.1);
-      text-align: center;
-    }
-    .wallpaper-image {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-    .wallpaper-title {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-    .wallpaper-meta, .wallpaper-desc {
-      margin-bottom: 15px;
-    }
-    .action-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #8a7053;
-      color: white;
-      padding: 12px 20px;
-      margin: 10px 5px 0;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .back-btn {
-      background: #a4bb86;
-    }
-    footer {
-      background: #d9c7a0;
-      color: #5d4b35;
-      padding: 50px 0 20px;
-      margin-top: 50px;
-      border-top: 1px solid #c4b58b;
-    }
+
     .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
     }
+
     .footer-column {
-      text-align: center;
+        text-align: center;
+        padding: 0 15px;
     }
+
     .footer-column h3 {
-      font-size: 18px;
-      margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #5d4b35;
     }
-    .footer-column p {
-      font-size: 14px;
-      margin-bottom: 15px;
+
+    .footer-column .logo img {
+        max-height: 35px;
+        margin-bottom: 10px;
     }
+
     .footer-column ul {
-      list-style: none;
-      padding: 0;
+        list-style: none;
+        padding: 0;
     }
+
     .footer-column ul li {
-      margin-bottom: 10px;
+        margin-bottom: 10px;
     }
+
     .footer-column ul li a {
-      text-decoration: none;
-      color: #6b573e;
-      transition: 0.3s;
+        color: #6b573e;
+        text-decoration: none;
+        transition: color 0.3s;
     }
+
     .footer-column ul li a:hover {
-      color: #8a7053;
+        color: #8a7053;
     }
+
+    .footer-column p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #6b573e;
+        margin-bottom: 15px;
+    }
+
     .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
     }
-    .social-links a {
-      font-size: 18px;
-      color: #5d4b35;
-      transition: 0.3s;
+
+    .social-links .social-icon {
+        color: #5d4b35;
+        font-size: 18px;
+        transition: color 0.3s;
     }
-    .social-links a:hover {
-      color: #8a7053;
+
+    .social-links .social-icon:hover {
+        color: #8a7053;
     }
+
     .footer-bottom {
-      text-align: center;
-      margin-top: 30px;
-      border-top: 1px solid #c4b58b;
-      padding-top: 20px;
-      font-size: 14px;
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid #c4b58b;
+        font-size: 14px;
+        color: #6b573e;
     }
-  </style>
+    </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav-container">
-    <a href="#" class="logo">
-      <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="CheDex Wallpapers">
-    </a>
-    <nav>
-      <ul>
-        <li><a href="https://www.facebook.com/chedexsonlinestore" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-threads"></i></a></li>
-        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <div class="container">
-    <div class="wallpaper-container">
-      <img src="https://via.placeholder.com/800x400" alt="Wallpaper" class="wallpaper-image">
-      <h1 class="wallpaper-title">Wallpaper Title</h1>
-      <div class="wallpaper-meta">Category | Resolution</div>
-      <p class="wallpaper-desc">This is a beautiful wallpaper description.</p>
-      <a href="#" class="action-btn"><i class="fas fa-download"></i> Download</a>
-      <a href="#" class="action-btn back-btn"><i class="fas fa-arrow-left"></i> Back to Gallery</a>
-    </div>
-  </div>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-column">
-        <a href="#" class="logo">
-          <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="CheDex Wallpapers" style="height: 35px; margin-bottom: 10px;">
-        </a>
-        <p>Discover amazing wallpapers for your devices. High quality, free downloads from CheDex Wallpapers.</p>
-        <div class="social-links">
-          <a href="https://www.facebook.com/chedexsonlinestore" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-threads"></i></a>
-          <a href="#"><i class="fab fa-pinterest"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="CheDex Wallpapers Logo">
+            </a>
+            <nav>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/chedexsonlinestore" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-threads"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <div class="footer-column">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
+    <main>
+        <div class="wallpaper-container">
+            <img id="wallpaperImage" class="wallpaper-image" src="" alt="Wallpaper">
+            <h1 id="wallpaperTitle" class="wallpaper-title">Wallpaper Title</h1>
+            <div id="wallpaperMeta" class="wallpaper-meta">Category | Resolution</div>
+            <p id="wallpaperDesc" class="wallpaper-desc">Description goes here...</p>
+            
+            <button id="downloadBtn" class="action-btn download-btn">
+                <i class="fas fa-download"></i> Download
+            </button>
+            <button id="shareBtn" class="action-btn share-btn">
+                <i class="fas fa-share-alt"></i> Share
+            </button>
+            
+            <a href="index.html" class="action-btn back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Gallery
+            </a>
+        </div>
+    </main>
 
-      <div class="footer-column">
-        <h3>Categories</h3>
-        <ul>
-          <li><a href="#">Nature</a></li>
-          <li><a href="#">Abstract</a></li>
-          <li><a href="#">Animals</a></li>
-          <li><a href="#">Space</a></li>
-          <li><a href="#">Urban</a></li>
-        </ul>
-      </div>
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <a href="#" class="logo" onclick="showSection('home'); return false;">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="CheDex Wallpapers Logo">
+                </a>
+                <p>Discover amazing wallpapers for your devices. High quality, free downloads from CheDex Wallpapers.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/chedexsonlinestore" target="_blank" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" title="Threads" class="social-icon"><i class="fab fa-threads"></i></a>
+                    <a href="#" target="_blank" title="Pinterest" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" target="_blank" title="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" onclick="showSection('home'); return false;">Home</a></li>
+                    <li><a href="#" onclick="showSection('about'); return false;">About Us</a></li>
+                    <li><a href="#" onclick="showSection('faq'); return false;">FAQ</a></li>
+                    <li><a href="#" onclick="showSection('contact'); return false;">Contact</a></li>
+                    <li><a href="#" onclick="showSection('terms'); return false;">Terms of Use</a></li>
+                    <li><a href="#" onclick="showSection('privacy'); return false;">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#" onclick="filterWallpapers('nature')">Nature</a></li>
+                    <li><a href="#" onclick="filterWallpapers('abstract')">Abstract</a></li>
+                    <li><a href="#" onclick="filterWallpapers('animals')">Animals</a></li>
+                    <li><a href="#" onclick="filterWallpapers('space')">Space</a></li>
+                    <li><a href="#" onclick="filterWallpapers('urban')">Urban</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> info@chedexwallpapers.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Wallpaper St, Digital City, DC 12345</li>
+                </ul>
+            </div>
+        </div>
 
-      <div class="footer-column">
-        <h3>Contact Us</h3>
-        <ul>
-          <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-          <li><i class="fas fa-envelope"></i> info@chedexwallpapers.com</li>
-          <li><i class="fas fa-map-marker-alt"></i> 123 Wallpaper St, Digital City</li>
-        </ul>
-      </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023-2025 CheDex Wallpapers. All Rights Reserved.</p>
+        </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2023-2025 CheDex Wallpapers. All Rights Reserved.</p>
-    </div>
-  </div>
 </footer>
 
+    <!-- Password Modal -->
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePasswordModal()">&times;</span>
+            <h2>Watch Video to Unlock Download</h2>
+            <div class="video-container">
+                <iframe id="passwordVideo" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>Please watch the video and enter the passwords to download:</p>
+            <div class="password-form">
+                <div class="password-input-group">
+                    <label for="englishPassword">English Password:</label>
+                    <input type="password" id="englishPassword" placeholder="Enter English password">
+                </div>
+                <div class="password-input-group">
+                    <label for="filipinoPassword">Filipino Password:</label>
+                    <input type="password" id="filipinoPassword" placeholder="Enter Filipino password">
+                </div>
+                <div class="password-input-group">
+                    <label for="bisayaPassword">Bisaya Password:</label>
+                    <input type="password" id="bisayaPassword" placeholder="Enter Bisaya password">
+                </div>
+                <p id="passwordError" class="password-error">One or more passwords are incorrect.</p>
+                <button class="password-submit-btn" onclick="verifyPassword()">Submit Passwords</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script>
+        // Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5s-oLTsM_RhsaDiVRWdybjtipeCspXmY",
+            authDomain: "online-storage-314fb.firebaseapp.com",
+            databaseURL: "https://online-storage-314fb-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "online-storage-314fb",
+            storageBucket: "online-storage-314fb.appspot.com",
+            messagingSenderId: "440072322730",
+            appId: "1:440072322730:web:3eb0275937b8ada5ae5ad3",
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // Get wallpaper ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const wallpaperId = urlParams.get('id');
+        let currentWallpaper = null;
+
+        // Load wallpaper data
+        if (wallpaperId) {
+            database.ref('wallpapers/' + wallpaperId).once('value').then((snapshot) => {
+                const wallpaper = snapshot.val();
+                
+                if (wallpaper && wallpaper.status === 'published') {
+                    currentWallpaper = wallpaper;
+                    
+                    // Display wallpaper
+                    document.getElementById('wallpaperImage').src = wallpaper.image || wallpaper.coverPhoto;
+                    document.getElementById('wallpaperTitle').textContent = wallpaper.title || 'Untitled';
+                    document.getElementById('wallpaperMeta').textContent = 
+                        (wallpaper.category || 'Uncategorized') + ' | ' + (wallpaper.resolution || 'N/A');
+                    document.getElementById('wallpaperDesc').textContent = wallpaper.description || 'No description available.';
+                    document.title = (wallpaper.title || 'Wallpaper') + ' - CheDex Wallpapers';
+                    
+                    // Set up download button
+                    document.getElementById('downloadBtn').addEventListener('click', () => {
+                        showPasswordModal(wallpaper);
+                    });
+                    
+                    // Set up share button
+                    document.getElementById('shareBtn').addEventListener('click', () => {
+                        if (navigator.share) {
+                            navigator.share({
+                                title: wallpaper.title || 'CheDex Wallpaper',
+                                text: 'Check out this wallpaper!',
+                                url: window.location.href
+                            });
+                        } else {
+                            navigator.clipboard.writeText(window.location.href);
+                            alert('Link copied to clipboard!');
+                        }
+                    });
+                } else {
+                    // Invalid wallpaper - redirect to gallery
+                    window.location.href = 'index.html';
+                }
+            });
+        } else {
+            // No ID - redirect to gallery
+            window.location.href = 'index.html';
+        }
+
+        function showPasswordModal(wallpaper) {
+            const modal = document.getElementById('passwordModal');
+            const video = document.getElementById('passwordVideo');
+            
+            video.src = wallpaper.videoUrl || 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+            document.getElementById('englishPassword').value = '';
+            document.getElementById('filipinoPassword').value = '';
+            document.getElementById('bisayaPassword').value = '';
+            document.getElementById('passwordError').style.display = 'none';
+            
+            modal.style.display = 'flex';
+        }
+
+        function closePasswordModal() {
+            document.getElementById('passwordModal').style.display = 'none';
+            document.getElementById('passwordVideo').src = '';
+        }
+
+        function verifyPassword() {
+            if (!currentWallpaper || !currentWallpaper.passwords) {
+                showPasswordError();
+                return;
+            }
+            
+            const english = document.getElementById('englishPassword').value;
+            const filipino = document.getElementById('filipinoPassword').value;
+            const bisaya = document.getElementById('bisayaPassword').value;
+            
+            if (english === currentWallpaper.passwords.english &&
+                filipino === currentWallpaper.passwords.filipino &&
+                bisaya === currentWallpaper.passwords.bisaya) {
+                downloadWallpaper(currentWallpaper);
+                closePasswordModal();
+            } else {
+                showPasswordError();
+            }
+        }
+
+        function showPasswordError() {
+            document.getElementById('passwordError').style.display = 'block';
+        }
+
+        function downloadWallpaper(wallpaper) {
+            if (wallpaper.image) {
+                const link = document.createElement('a');
+                link.href = wallpaper.image;
+                link.download = `${wallpaper.title || 'wallpaper'}.jpg`;
+                link.click();
+                
+                // Track download in Firebase
+                const downloadsRef = database.ref('downloads/' + wallpaperId);
+                downloadsRef.transaction(count => (count || 0) + 1);
+            }
+        }
+    </script>
 </body>
 </html>
