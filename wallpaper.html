@@ -112,173 +112,69 @@
         footer {
             background-color: #d9c7a0;
             color: #5d4b35;
-            padding: 20px 0;
-            text-align: center;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(93, 75, 53, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background-color: #f8f4eb;
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-        }
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #8a7053;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .password-form {
-            margin-top: 20px;
-        }
-        .password-input-group {
-            margin-bottom: 15px;
-        }
-        .password-input-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .password-form input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d9c7a0;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        .password-submit-btn {
-            background-color: #8a7053;
-            color: #f8f4eb;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            margin-top: 10px;
-        }
-        .password-error {
-            color: #d9534f;
-            margin-top: 10px;
-            display: none;
-        }
-        @media (max-width: 768px) {
-            .wallpaper-image {
-                max-height: 50vh;
-            }
-            .action-btn {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-             /* Footer Styles */
-        footer {
-            background-color: #d9c7a0;
-            color: #5d4b35;
             padding: 50px 0 20px;
             border-top: 1px solid #c4b58b;
         }
-
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-bottom: 30px;
         }
-
         .footer-column {
             text-align: center;
             padding: 0 15px;
         }
-
         .footer-column h3 {
             font-size: 18px;
             margin-bottom: 15px;
             color: #5d4b35;
         }
-
         .footer-column .logo img {
             max-height: 35px;
             margin-bottom: 10px;
         }
-
         .footer-column ul {
             list-style: none;
             padding: 0;
         }
-
         .footer-column ul li {
             margin-bottom: 10px;
         }
-
         .footer-column ul li a {
             color: #6b573e;
             text-decoration: none;
             transition: color 0.3s;
         }
-
         .footer-column ul li a:hover {
             color: #8a7053;
         }
-
         .footer-column p {
             font-size: 14px;
             line-height: 1.6;
             color: #6b573e;
             margin-bottom: 15px;
         }
-
         .social-links {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-top: 15px;
         }
-
         .social-links .social-icon {
             color: #5d4b35;
             font-size: 18px;
             transition: color 0.3s;
         }
-
         .social-links .social-icon:hover {
             color: #8a7053;
         }
-
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid #c4b58b;
             font-size: 14px;
             color: #6b573e;
-        }
         }
     </style>
 </head>
@@ -319,7 +215,7 @@
         </div>
     </main>
 
-     <footer>
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -362,168 +258,15 @@
                     <ul>
                         <li><i class="fas fa-phone"></i> (555) 123-4567</li>
                         <li><i class="fas fa-envelope"></i> info@chedexwallpapers.com</li>
-                        
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Wallpaper St, Digital City, DC 12345</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 1234 Wallpaper St, City, Country</li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2023-2025 CheDex Wallpapers. All Rights Reserved.</p>
+                <p>&copy; 2025 CheDex Wallpapers. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Password Modal -->
-    <div class="modal" id="passwordModal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closePasswordModal()">&times;</span>
-            <h2>Watch Video to Unlock Download</h2>
-            <div class="video-container">
-                <iframe id="passwordVideo" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <p>Please watch the video and enter the passwords to download:</p>
-            <div class="password-form">
-                <div class="password-input-group">
-                    <label for="englishPassword">English Password:</label>
-                    <input type="password" id="englishPassword" placeholder="Enter English password">
-                </div>
-                <div class="password-input-group">
-                    <label for="filipinoPassword">Filipino Password:</label>
-                    <input type="password" id="filipinoPassword" placeholder="Enter Filipino password">
-                </div>
-                <div class="password-input-group">
-                    <label for="bisayaPassword">Bisaya Password:</label>
-                    <input type="password" id="bisayaPassword" placeholder="Enter Bisaya password">
-                </div>
-                <p id="passwordError" class="password-error">One or more passwords are incorrect.</p>
-                <button class="password-submit-btn" onclick="verifyPassword()">Submit Passwords</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-
-    <script>
-        // Firebase config
-        const firebaseConfig = {
-            apiKey: "AIzaSyD5s-oLTsM_RhsaDiVRWdybjtipeCspXmY",
-            authDomain: "online-storage-314fb.firebaseapp.com",
-            databaseURL: "https://online-storage-314fb-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "online-storage-314fb",
-            storageBucket: "online-storage-314fb.appspot.com",
-            messagingSenderId: "440072322730",
-            appId: "1:440072322730:web:3eb0275937b8ada5ae5ad3",
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const database = firebase.database();
-
-        // Get wallpaper ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const wallpaperId = urlParams.get('id');
-        let currentWallpaper = null;
-
-        // Load wallpaper data
-        if (wallpaperId) {
-            database.ref('wallpapers/' + wallpaperId).once('value').then((snapshot) => {
-                const wallpaper = snapshot.val();
-                
-                if (wallpaper && wallpaper.status === 'published') {
-                    currentWallpaper = wallpaper;
-                    
-                    // Display wallpaper
-                    document.getElementById('wallpaperImage').src = wallpaper.image || wallpaper.coverPhoto;
-                    document.getElementById('wallpaperTitle').textContent = wallpaper.title || 'Untitled';
-                    document.getElementById('wallpaperMeta').textContent = 
-                        (wallpaper.category || 'Uncategorized') + ' | ' + (wallpaper.resolution || 'N/A');
-                    document.getElementById('wallpaperDesc').textContent = wallpaper.description || 'No description available.';
-                    document.title = (wallpaper.title || 'Wallpaper') + ' - CheDex Wallpapers';
-                    
-                    // Set up download button
-                    document.getElementById('downloadBtn').addEventListener('click', () => {
-                        showPasswordModal(wallpaper);
-                    });
-                    
-                    // Set up share button
-                    document.getElementById('shareBtn').addEventListener('click', () => {
-                        if (navigator.share) {
-                            navigator.share({
-                                title: wallpaper.title || 'CheDex Wallpaper',
-                                text: 'Check out this wallpaper!',
-                                url: window.location.href
-                            });
-                        } else {
-                            navigator.clipboard.writeText(window.location.href);
-                            alert('Link copied to clipboard!');
-                        }
-                    });
-                } else {
-                    // Invalid wallpaper - redirect to gallery
-                    window.location.href = 'index.html';
-                }
-            });
-        } else {
-            // No ID - redirect to gallery
-            window.location.href = 'index.html';
-        }
-
-        function showPasswordModal(wallpaper) {
-            const modal = document.getElementById('passwordModal');
-            const video = document.getElementById('passwordVideo');
-            
-            video.src = wallpaper.videoUrl || 'https://www.youtube.com/embed/dQw4w9WgXcQ';
-            document.getElementById('englishPassword').value = '';
-            document.getElementById('filipinoPassword').value = '';
-            document.getElementById('bisayaPassword').value = '';
-            document.getElementById('passwordError').style.display = 'none';
-            
-            modal.style.display = 'flex';
-        }
-
-        function closePasswordModal() {
-            document.getElementById('passwordModal').style.display = 'none';
-            document.getElementById('passwordVideo').src = '';
-        }
-
-        function verifyPassword() {
-            if (!currentWallpaper || !currentWallpaper.passwords) {
-                showPasswordError();
-                return;
-            }
-            
-            const english = document.getElementById('englishPassword').value;
-            const filipino = document.getElementById('filipinoPassword').value;
-            const bisaya = document.getElementById('bisayaPassword').value;
-            
-            if (english === currentWallpaper.passwords.english &&
-                filipino === currentWallpaper.passwords.filipino &&
-                bisaya === currentWallpaper.passwords.bisaya) {
-                downloadWallpaper(currentWallpaper);
-                closePasswordModal();
-            } else {
-                showPasswordError();
-            }
-        }
-
-        function showPasswordError() {
-            document.getElementById('passwordError').style.display = 'block';
-        }
-
-        function downloadWallpaper(wallpaper) {
-            if (wallpaper.image) {
-                const link = document.createElement('a');
-                link.href = wallpaper.image;
-                link.download = `${wallpaper.title || 'wallpaper'}.jpg`;
-                link.click();
-                
-                // Track download in Firebase
-                const downloadsRef = database.ref('downloads/' + wallpaperId);
-                downloadsRef.transaction(count => (count || 0) + 1);
-            }
-        }
-    </script>
 </body>
 </html>
