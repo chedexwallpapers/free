@@ -1,120 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PinoyGulay - 30 Days of Filipino Vegetable Recipes</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background-color: #f5f1e8;
-      color: #5d4b35;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    header {
-      background-color: #d9c7a0;
-      padding: 15px 0;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-    }
-    nav ul li a {
-      color: #5d4b35;
-      font-size: 18px;
-      text-decoration: none;
-    }
-    nav ul li a:hover {
-      color: #8a7053;
-    }
-    .logo img {
-      height: 40px;
-    }
-    main {
-      padding: 50px 0;
-    }
-    footer {
-      background-color: #d9c7a0;
-      color: #5d4b35;
-      padding: 50px 0 20px;
-      border-top: 1px solid #c4b58b;
-      margin-top: 50px;
-    }
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-    .footer-column {
-      text-align: center;
-    }
-    .footer-column h3 {
-      margin-bottom: 15px;
-      font-size: 18px;
-      font-weight: 600;
-      color: #5d4b35;
-    }
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-    }
-    .footer-column ul li {
-      margin-bottom: 10px;
-    }
-    .footer-column ul li a {
-      color: #6b573e;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-    .footer-column ul li a:hover {
-      color: #8a7053;
-    }
-    .footer-column p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #6b573e;
-    }
-    .social-links {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-    .social-icon {
-      font-size: 20px;
-      color: #5d4b35;
-      transition: 0.3s;
-    }
-    .social-icon:hover {
-      color: #8a7053;
-    }
-    .footer-bottom {
-      text-align: center;
-      font-size: 14px;
-      color: #6b573e;
-      border-top: 1px solid #c4b58b;
-      padding-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinoyGulay - 30 Days of Filipino Vegetable Recipes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="og:title" content="PinoyGulay - Authentic Filipino Vegetable Recipes">
+    <meta property="og:description" content="Discover 30 days of healthy and delicious Filipino vegetable recipes.">
+    <meta property="og:image" content="images/pinoygulay-cover.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f1e8;
+            color: #5d4b35;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #d9c7a0;
+            color: #5d4b35;
+            padding: 10px 0;
+            z-index: 1001;
+            position: relative;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+            vertical-align: middle;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        .wallpaper-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: #f8f4eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(93, 75, 53, 0.1);
+            padding: 30px;
+        }
+        .wallpaper-image {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 30px;
+        }
+        .wallpaper-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .wallpaper-meta {
+            color: #8a7053;
+            margin-bottom: 20px;
+        }
+        .wallpaper-desc {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .action-btn {
+            padding: 12px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-right: 10px;
+        }
+        .download-btn {
+            background-color: #8a7053;
+            color: white;
+        }
+        .share-btn {
+            background-color: #e8e0cf;
+        }
+        .back-btn {
+            background-color: #a4bb86;
+            color: white;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        footer {
+            background-color: #d9c7a0;
+            color: #5d4b35;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(93, 75, 53, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #f8f4eb;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #8a7053;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .password-form {
+            margin-top: 20px;
+        }
+        .password-input-group {
+            margin-bottom: 15px;
+        }
+        .password-input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .password-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d9c7a0;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .password-submit-btn {
+            background-color: #8a7053;
+            color: #f8f4eb;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .password-error {
+            color: #d9534f;
+            margin-top: 10px;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .wallpaper-image {
+                max-height: 50vh;
+            }
+            .action-btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+             /* Footer Styles */
+        footer {
+            background-color: #d9c7a0;
+            color: #5d4b35;
+            padding: 50px 0 20px;
+            border-top: 1px solid #c4b58b;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column {
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #5d4b35;
+        }
+
+        .footer-column .logo img {
+            max-height: 35px;
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #6b573e;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #8a7053;
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #6b573e;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-links .social-icon {
+            color: #5d4b35;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .social-links .social-icon:hover {
+            color: #8a7053;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #c4b58b;
+            font-size: 14px;
+            color: #6b573e;
+        }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -152,62 +318,61 @@
             </a>
         </div>
     </main>
-<footer>
-  <div class="container">
-    <div class="footer-content">
-      
-      <div class="footer-column">
-        <a href="#" class="logo">
-          <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="Logo" style="height:35px;">
-        </a>
-        <p>Discover amazing wallpapers and more. Free and high-quality resources for everyone.</p>
-        <div class="social-links">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-threads"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+
+     <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <a href="#" class="logo" onclick="showSection('home'); return false;">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="CheDex Wallpapers Logo">
+                    </a>
+                    <p>Discover amazing wallpapers for your devices. High quality, free downloads from CheDex Wallpapers.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/chedexsonlinestore" target="_blank" title="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" title="Threads" class="social-icon"><i class="fab fa-threads"></i></a>
+                        <a href="#" target="_blank" title="Pinterest" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" target="_blank" title="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="showSection('home'); return false;">Home</a></li>
+                        <li><a href="#" onclick="showSection('about'); return false;">About Us</a></li>
+                        <li><a href="#" onclick="showSection('faq'); return false;">FAQ</a></li>
+                        <li><a href="#" onclick="showSection('contact'); return false;">Contact</a></li>
+                        <li><a href="#" onclick="showSection('terms'); return false;">Terms of Use</a></li>
+                        <li><a href="#" onclick="showSection('privacy'); return false;">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#" onclick="filterWallpapers('nature')">Nature</a></li>
+                        <li><a href="#" onclick="filterWallpapers('abstract')">Abstract</a></li>
+                        <li><a href="#" onclick="filterWallpapers('animals')">Animals</a></li>
+                        <li><a href="#" onclick="filterWallpapers('space')">Space</a></li>
+                        <li><a href="#" onclick="filterWallpapers('urban')">Urban</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@chedexwallpapers.com</li>
+                        
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Wallpaper St, Digital City, DC 12345</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023-2025 CheDex Wallpapers. All Rights Reserved.</p>
+            </div>
         </div>
-      </div>
-
-      <div class="footer-column">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Categories</h3>
-        <ul>
-          <li><a href="#">Nature</a></li>
-          <li><a href="#">Abstract</a></li>
-          <li><a href="#">Animals</a></li>
-          <li><a href="#">Space</a></li>
-          <li><a href="#">Urban</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h3>Contact Us</h3>
-        <ul>
-          <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-          <li><i class="fas fa-envelope"></i> info@example.com</li>
-          <li><i class="fas fa-map-marker-alt"></i> 123 Street, City, PH</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      &copy; 2023-2025 CheDex Wallpapers. All Rights Reserved.
-    </div>
-  </div>
-</footer>
+    </footer>
 
     <!-- Password Modal -->
     <div class="modal" id="passwordModal">
@@ -351,7 +516,7 @@
             if (wallpaper.image) {
                 const link = document.createElement('a');
                 link.href = wallpaper.image;
-                link.download = ${wallpaper.title || 'wallpaper'}.jpg;
+                link.download = `${wallpaper.title || 'wallpaper'}.jpg`;
                 link.click();
                 
                 // Track download in Firebase
@@ -360,7 +525,5 @@
             }
         }
     </script>
-</body>
-</html>
 </body>
 </html>
