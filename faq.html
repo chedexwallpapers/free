@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CheDex Wallpapers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f1e8;
+            color: #5d4b35;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #d9c7a0;
+            color: #5d4b35;
+            padding: 10px 0;
+            z-index: 1001;
+            position: relative;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+            vertical-align: middle;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        .content-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: #f8f4eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(93, 75, 53, 0.1);
+            padding: 30px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e8e0cf;
+            padding-bottom: 20px;
+        }
+        .faq-question {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #f0e9d9;
+            border-radius: 5px;
+        }
+        .faq-answer.show {
+            display: block;
+        }
+        footer {
+            background-color: #d9c7a0;
+            color: #5d4b35;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="CheDex Wallpapers Logo">
+            </a>
+            <nav>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/chedexsonlinestore" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-threads"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="content-container">
+            <h1>Frequently Asked Questions</h1>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>How do I download wallpapers?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>To download a wallpaper, simply click on the download button on the wallpaper you like. You'll be prompted to watch a short video and enter the required passwords. After completing these steps, the download will start automatically.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Why do I need to watch a video to download?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The video requirement helps support our platform and allows us to continue providing free, high-quality wallpapers. It's a small step that makes a big difference in keeping CheDex Wallpapers running.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Where do I find the passwords?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The passwords are shown in the video you need to watch before downloading. Pay close attention to the video as it will display the English, Filipino, and Bisaya passwords you need to enter.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Are the wallpapers really free?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! All wallpapers on CheDex Wallpapers are completely free to download. We may show ads or require you to watch a video to support our platform, but there are no hidden fees or subscriptions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Can I use these wallpapers commercially?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our wallpapers are for personal use only. If you'd like to use them for commercial purposes (business websites, products, etc.), please contact us for licensing information.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>How often do you add new wallpapers?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We add new wallpapers weekly. Follow us on social media to get updates when new collections are released!</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>What devices are these wallpapers compatible with?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our wallpapers are optimized for most modern smartphones, tablets, and computers. Each wallpaper's resolution is displayed so you can choose the best fit for your device.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>How can I submit my own wallpapers?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We love featuring community creations! Please email us at submissions@chedexwallpapers.com with your wallpaper files and information about yourself. If selected, we'll credit you when your wallpaper is published.</p>
+                </div>
+            </div>
+            
+            <h2 style="margin-top: 40px;">Still have questions?</h2>
+            <p>Contact us at support@chedexwallpapers.com and we'll be happy to help!</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="CheDex Wallpapers Logo" style="height: 40px;">
+                    </a>
+                    <p>Discover amazing wallpapers for your devices.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/chedexsonlinestore" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-threads"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Nature</a></li>
+                        <li><a href="#">Abstract</a></li>
+                        <li><a href="#">Animals</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center;">&copy; 2023 CheDex Wallpapers</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAnswer(question) {
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector('i');
+            
+            answer.classList.toggle('show');
+            
+            if (answer.classList.contains('show')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheDex Wallpapers - Free Beautiful Wallpapers</title>
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="CheDex Wallpapers - Free Beautiful Wallpapers">
+    <meta property="og:description" content="Enhance your device with our stunning collection of high-quality wallpapers from CheDex Wallpapers.">
+    <meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f1e8;
+            color: #5d4b35;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #d9c7a0;
+            color: #5d4b35;
+            padding: 10px 0;
+            z-index: 1001;
+            position: relative;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+            vertical-align: middle;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        .hero {
+            background: linear-gradient(rgba(217, 199, 160, 0.7), rgba(217, 199, 160, 0.7)), url('/api/placeholder/1200/400') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #5d4b35;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        .search-bar {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+            background-color: #f8f4eb;
+        }
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #8a7053;
+            color: #f8f4eb;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .gallery {
+            padding: 50px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .category {
+            padding: 8px 15px;
+            margin: 5px;
+            background-color: #e8e0cf;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .category.active, .category:hover {
+            background-color: #8a7053;
+            color: #f8f4eb;
+        }
+        .wallpapers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .wallpaper-card {
+            background: #f8f4eb;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(93, 75, 53, 0.1);
+        }
+        .wallpaper-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            position: relative;
+        }
+        .download-icon-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(138, 112, 83, 0.8);
+            color: #f8f4eb;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .wallpaper-info {
+            padding: 10px 12px;
+        }
+        .wallpaper-info h3 {
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .metadata {
+            font-size: 12px;
+            color: #8a7053;
+            font-weight: normal;
+        }
+        footer {
+            background-color: #d9c7a0;
+            color: #5d4b35;
+            padding: 50px 0 20px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        /* Remove bullets from all lists */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .contact-info {
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+        .contact-info i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+        .license {
+            font-size: 14px;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(93, 75, 53, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #f8f4eb;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #8a7053;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .password-form {
+            margin-top: 20px;
+        }
+        .password-input-group {
+            margin-bottom: 15px;
+        }
+        .password-input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .password-form input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d9c7a0;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .password-submit-btn {
+            background-color: #8a7053;
+            color: #f8f4eb;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .password-error {
+            color: #d9534f;
+            margin-top: 10px;
+            display: none;
+        }
+        @media (max-width: 1024px) {
+            .wallpapers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .wallpapers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="CheDex Wallpapers Logo">
+            </a>
+            <nav>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/chedexsonlinestore" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-threads"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Discover Amazing Wallpapers</h1>
+                <p>Enhance your device with our stunning collection of high-quality wallpapers from CheDex Wallpapers.</p>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search wallpapers...">
+                    <button onclick="searchWallpapers()">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery container">
+            <div class="section-title">
+                <h2>Browse Wallpapers</h2>
+                <p>Find the perfect wallpaper for your device</p>
+            </div>
+
+            <div class="categories">
+                <div class="category active" onclick="filterWallpapers('all')">All</div>
+                <div class="category" onclick="filterWallpapers('nature')">Nature</div>
+                <div class="category" onclick="filterWallpapers('abstract')">Abstract</div>
+                <div class="category" onclick="filterWallpapers('animals')">Animals</div>
+                <div class="category" onclick="filterWallpapers('space')">Space</div>
+                <div class="category" onclick="filterWallpapers('urban')">Urban</div>
+            </div>
+
+            <div id="loadingIndicator">Loading wallpapers...</div>
+            <div class="wallpapers-grid" id="wallpapersGrid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <a href="index.html" class="logo">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/online-storage-314fb.appspot.com/o/chedex%20wallpapers%20logo.svg?alt=media&token=fb2a2baf-1aaf-4013-9122-206d5ffe4eb8" alt="CheDex Wallpapers Logo" style="height: 40px;">
+                    </a>
+                    <p>Discover amazing wallpapers for your devices.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> chedestore@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Puerto Princesa City, Palawan, PH</p>
+                    </div>
+                    <div class="license">
+                        Free for personal and commercial use
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/chedexsonlinestore" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-threads"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="license.html">License</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Nature</a></li>
+                        <li><a href="#">Abstract</a></li>
+                        <li><a href="#">Animals</a></li>
+                        <li><a href="#">Space</a></li>
+                        <li><a href="#">Urban</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center;">&copy; 2025 CheDex Wallpapers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Password Modal -->
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePasswordModal()">&times;</span>
+            <h2>Watch Video to Unlock Download</h2>
+            <div class="video-container">
+                <iframe id="passwordVideo" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>Please watch the video and enter the passwords to download:</p>
+            <div class="password-form">
+                <div class="password-input-group">
+                    <label for="englishPassword">English Password:</label>
+                    <input type="password" id="englishPassword" placeholder="Enter English password">
+                </div>
+                <div class="password-input-group">
+                    <label for="filipinoPassword">Filipino Password:</label>
+                    <input type="password" id="filipinoPassword" placeholder="Enter Filipino password">
+                </div>
+                <div class="password-input-group">
+                    <label for="bisayaPassword">Bisaya Password:</label>
+                    <input type="password" id="bisayaPassword" placeholder="Enter Bisaya password">
+                </div>
+                <p id="passwordError" class="password-error">One or more passwords are incorrect.</p>
+                <button class="password-submit-btn" onclick="verifyPassword()">Submit Passwords</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script>
+        // Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5s-oLTsM_RhsaDiVRWdybjtipeCspXmY",
+            authDomain: "online-storage-314fb.firebaseapp.com",
+            databaseURL: "https://online-storage-314fb-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "online-storage-314fb",
+            storageBucket: "online-storage-314fb.appspot.com",
+            messagingSenderId: "440072322730",
+            appId: "1:440072322730:web:3eb0275937b8ada5ae5ad3",
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        let allWallpapers = [];
+        let currentWallpapers = [];
+        let wallpaperToDownload = null;
+
+        function loadWallpapers() {
+            const wallpapersRef = database.ref('wallpapers');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const grid = document.getElementById('wallpapersGrid');
+            
+            loadingIndicator.style.display = 'block';
+            grid.innerHTML = '';
+            
+            wallpapersRef.once('value').then((snapshot) => {
+                const data = snapshot.val();
+                allWallpapers = [];
+                
+                for (const id in data) {
+                    if (data[id].status === 'published') {
+                        allWallpapers.push({ id, ...data[id] });
+                    }
+                }
+                
+                currentWallpapers = [...allWallpapers];
+                displayWallpapers(currentWallpapers);
+                loadingIndicator.style.display = 'none';
+            });
+        }
+
+        function displayWallpapers(wallpapers) {
+            const grid = document.getElementById('wallpapersGrid');
+            grid.innerHTML = '';
+            
+            wallpapers.forEach(wallpaper => {
+                grid.innerHTML += `
+                    <div class="wallpaper-card">
+                        <div class="wallpaper-img" style="background-image: url('${wallpaper.coverPhoto || wallpaper.image}')" 
+                             onclick="window.location.href='wallpaper.html?id=${wallpaper.id}'">
+                            <button class="download-icon-btn" onclick="event.stopPropagation(); triggerDownload('${wallpaper.id}')">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <div class="wallpaper-info">
+                            <h3>
+                                ${wallpaper.title || 'Untitled'}
+                                <span class="metadata">
+                                    ${wallpaper.category || 'Uncategorized'} | ${wallpaper.resolution || 'N/A'}
+                                </span>
+                            </h3>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterWallpapers(category) {
+            document.querySelectorAll('.category').forEach(cat => cat.classList.remove('active'));
+            document.querySelector(`.category[onclick="filterWallpapers('${category}')"]`).class.classList.add('active');
+            
+            if (category === 'all') {
+                currentWallpapers = [...allWallpapers];
+            } else {
+                currentWallpapers = allWallpapers.filter(w => w.category === category);
+            }
+            
+            displayWallpapers(currentWallpapers);
+        }
+
+        function searchWallpapers() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+            if (!term) {
+                filterWallpapers('all');
+                return;
+            }
+            
+            currentWallpapers = allWallpapers.filter(w => 
+                (w.title && w.title.toLowerCase().includes(term)) ||
+                (w.description && w.description.toLowerCase().includes(term)) ||
+                (w.category && w.category.toLowerCase().includes(term))
+            );
+            
+            displayWallpapers(currentWallpapers);
+        }
+
+        function triggerDownload(wallpaperId) {
+            const wallpaper = allWallpapers.find(w => w.id === wallpaperId);
+            if (!wallpaper) return;
+            
+            wallpaperToDownload = wallpaperId;
+            showPasswordModal(wallpaper);
+        }
+
+        function showPasswordModal(wallpaper) {
+            const modal = document.getElementById('passwordModal');
+            const video = document.getElementById('passwordVideo');
+            
+            video.src = wallpaper.videoUrl || 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+            document.getElementById('englishPassword').value = '';
+            document.getElementById('filipinoPassword').value = '';
+            document.getElementById('bisayaPassword').value = '';
+            document.getElementById('passwordError').style.display = 'none';
+            
+            modal.style.display = 'flex';
+        }
+
+        function closePasswordModal() {
+            document.getElementById('passwordModal').style.display = 'none';
+            document.getElementById('passwordVideo').src = '';
+            wallpaperToDownload = null;
+        }
+
+        function verifyPassword() {
+            if (!wallpaperToDownload) {
+                closePasswordModal();
+                return;
+            }
+            
+            const wallpaper = allWallpapers.find(w => w.id === wallpaperToDownload);
+            if (!wallpaper || !wallpaper.passwords) {
+                showPasswordError();
+                return;
+            }
+            
+            const english = document.getElementById('englishPassword').value;
+            const filipino = document.getElementById('filipinoPassword').value;
+            const bisaya = document.getElementById('bisayaPassword').value;
+            
+            if (english === wallpaper.passwords.english &&
+                filipino === wallpaper.passwords.filipino &&
+                bisaya === wallpaper.passwords.bisaya) {
+                downloadWallpaper(wallpaper);
+                closePasswordModal();
+            } else {
+                showPasswordError();
+            }
+        }
+
+        function showPasswordError() {
+            document.getElementById('passwordError').style.display = 'block';
+        }
+
+        function downloadWallpaper(wallpaper) {
+            if (wallpaper.image) {
+                const link = document.createElement('a');
+                link.href = wallpaper.image;
+                link.download = `${wallpaper.title || 'wallpaper'}.jpg`;
+                link.click();
+                
+                // Track download in Firebase
+                const downloadsRef = database.ref('downloads/' + wallpaper.id);
+                downloadsRef.transaction(count => (count || 0) + 1);
+            }
+        }
+
+        // Load wallpapers on page load
+        document.addEventListener('DOMContentLoaded', loadWallpapers);
+    </script>
+</body>
+</html>
