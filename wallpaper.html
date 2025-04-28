@@ -112,173 +112,70 @@
         footer {
             background-color: #d9c7a0;
             color: #5d4b35;
-            padding: 20px 0;
+            padding: 50px 0 20px;
+            border-top: 1px solid #c4b58b;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-column {
             text-align: center;
+            padding: 0 15px;
         }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(93, 75, 53, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #5d4b35;
         }
-        .modal-content {
-            background-color: #f8f4eb;
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
+        .footer-column .logo img {
+            max-height: 35px;
+            margin-bottom: 10px;
         }
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        .footer-column ul li a {
+            color: #6b573e;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column ul li a:hover {
             color: #8a7053;
         }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .password-form {
-            margin-top: 20px;
-        }
-        .password-input-group {
+        .footer-column p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #6b573e;
             margin-bottom: 15px;
         }
-        .password-input-group label {
-            display: block;
-            margin-bottom: 5px;
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
         }
-        .password-form input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #d9c7a0;
-            border-radius: 4px;
-            font-size: 16px;
+        .social-links .social-icon {
+            color: #5d4b35;
+            font-size: 18px;
+            transition: color 0.3s;
         }
-        .password-submit-btn {
-            background-color: #8a7053;
-            color: #f8f4eb;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            margin-top: 10px;
+        .social-links .social-icon:hover {
+            color: #8a7053;
         }
-        .password-error {
-            color: #d9534f;
-            margin-top: 10px;
-            display: none;
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #c4b58b;
+            font-size: 14px;
+            color: #6b573e;
         }
-        @media (max-width: 768px) {
-            .wallpaper-image {
-                max-height: 50vh;
-            }
-            .action-btn {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-             /* Footer Styles */
-        footer {
-        background-color: #d9c7a0;
-        color: #5d4b35;
-        padding: 50px 0 20px;
-        border-top: 1px solid #c4b58b;
-    }
-
-    .footer-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        margin-bottom: 30px;
-    }
-
-    .footer-column {
-        text-align: center;
-        padding: 0 15px;
-    }
-
-    .footer-column h3 {
-        font-size: 18px;
-        margin-bottom: 15px;
-        color: #5d4b35;
-    }
-
-    .footer-column .logo img {
-        max-height: 35px;
-        margin-bottom: 10px;
-    }
-
-    .footer-column ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-column ul li {
-        margin-bottom: 10px;
-    }
-
-    .footer-column ul li a {
-        color: #6b573e;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .footer-column ul li a:hover {
-        color: #8a7053;
-    }
-
-    .footer-column p {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #6b573e;
-        margin-bottom: 15px;
-    }
-
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 15px;
-    }
-
-    .social-links .social-icon {
-        color: #5d4b35;
-        font-size: 18px;
-        transition: color 0.3s;
-    }
-
-    .social-links .social-icon:hover {
-        color: #8a7053;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid #c4b58b;
-        font-size: 14px;
-        color: #6b573e;
-    }
     </style>
 </head>
 <body>
